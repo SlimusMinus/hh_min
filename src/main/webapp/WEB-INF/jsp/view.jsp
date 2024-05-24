@@ -19,6 +19,8 @@
 <div class="scrollable-panel">
     <div class="form-wrapper">
         <div class="full-name">${resume.fullName}
+            <td><a href="resumes?uuid=${resume.uuid}&action=edit"><img src="../../img/pencil.png" alt=""></a></td>
+
             <a class="no-underline-anchor" href="resume?uuid=${resume.uuid}&action=edit&theme=${theme}">
                 <img src="img/${theme}/edit.svg" alt="">
             </a>
@@ -32,7 +34,6 @@
                 </div>
             </c:forEach>
         </div>
-
         <div class="spacer"></div>
 
         <c:forEach var="sectionEntry" items="${resume.sections}">
