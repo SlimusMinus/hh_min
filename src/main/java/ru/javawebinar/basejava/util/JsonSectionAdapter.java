@@ -12,7 +12,10 @@ public class JsonSectionAdapter<T> implements JsonSerializer<T>, JsonDeserialize
     public T deserialize(JsonElement json, Type type, JsonDeserializationContext context) throws JsonParseException {
         JsonObject jsonObject = json.getAsJsonObject();
         JsonPrimitive prim = (JsonPrimitive) jsonObject.get(CLASSNAME);
-        String className = prim.getAsString();
+        String className = "";
+        if(prim != null){
+            className = prim.getAsString();
+        }
 
         try {
             Class clazz = Class.forName(className);

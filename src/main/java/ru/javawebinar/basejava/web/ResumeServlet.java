@@ -1,5 +1,4 @@
 package ru.javawebinar.basejava.web;
-
 import ru.javawebinar.basejava.Config;
 import ru.javawebinar.basejava.model.*;
 import ru.javawebinar.basejava.storage.Storage;
@@ -23,11 +22,16 @@ public class ResumeServlet extends HttpServlet {
         dark, light, purple
     }
 
-    private Storage storage; // = Config.get().getStorage();
-    private final Set<String> themes = new HashSet<>(); // https://stackoverflow.com/a/4936895/548473
+    private Storage storage;
+    private final Set<String> themes = new HashSet<>();
 
     @Override
     public void init(ServletConfig config) throws ServletException {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         super.init(config);
         storage = Config.get().getStorage();
         for (THEME t : THEME.values()) {
@@ -40,7 +44,7 @@ public class ResumeServlet extends HttpServlet {
         String uuid = request.getParameter("uuid");
         String fullName = request.getParameter("fullName");
 
-        final boolean isCreate = (uuid == null || uuid.length() == 0);
+        final boolean isCreate = (uuid == null || uuid.isEmpty());
         Resume r;
         if (isCreate) {
             r = new Resume(fullName);
