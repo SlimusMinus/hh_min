@@ -146,3 +146,86 @@ body {
     text-decoration: underline;
     opacity: 0.8;
 }
+header {
+    background: none repeat scroll 0 0 #A6C9E2;
+    color: #2E6E9E;
+    font-size: 20px;
+    padding: 5px 20px;
+}
+
+footer {
+    background: none repeat scroll 0 0 #A6C9E2;
+    color: #2E6E9E;
+    font-size: 20px;
+    padding: 5px 20px;
+    margin: 20px 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 5px;
+}
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 5px;
+    box-sizing: border-box;
+}
+.title-column {
+    width: 200px;
+    font-weight: bold;
+}
+.section-title {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+hr {
+    margin: 20px 0;
+}
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.cancel-button {
+    background-color: #6c757d;
+}
+.cancel-button:hover {
+    background-color: #5a6268;
+}

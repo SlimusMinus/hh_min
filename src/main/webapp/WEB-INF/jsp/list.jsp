@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="../../css/edit-resume-styles.css">
 </head>
 <body>
+
 <jsp:include page="fragments/header.jsp"/>
+
 <table border="1">
     <tr>
         <th>num</th>
