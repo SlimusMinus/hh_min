@@ -108,7 +108,7 @@ public class ResumeServlet extends HttpServlet {
         } else {
             storage.update(r);
         }
-        response.sendRedirect("resume?theme=" + getTheme(request));
+        response.sendRedirect("resumes?theme=" + getTheme(request));
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
@@ -126,7 +126,7 @@ public class ResumeServlet extends HttpServlet {
             case "delete":
                 Config.get().checkImmutable(uuid);
                 storage.delete(uuid);
-                response.sendRedirect("resume");
+                response.sendRedirect("resumes");
                 return;
             case "view":
                 r = storage.get(uuid);
